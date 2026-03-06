@@ -3,10 +3,10 @@ services:
     build: .
     container_name: azure-cv-simulator
     ports:
-      - "7001:8000"
+      - "7001:7001"
     restart: unless-stopped
     healthcheck:
-      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"]
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:7001/health')"]
       interval: 10s
       timeout: 5s
       retries: 3
